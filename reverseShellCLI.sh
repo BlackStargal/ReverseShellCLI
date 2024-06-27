@@ -83,7 +83,6 @@ if [ "$option" == "2" ]; then
   clear
   echo -e "\nListing all payloads for ${purpleColour}$(echo -n $shells | awk -v var="$shellType" $'{print $var}' FS=':')${endColour}\n"
   sleep 1.4
-  clear
   echo -e "${purpleColour}$(cat $shellFile | grep -oP "\"name\": \K\".*?\"" | tr -d '"' | column)${endColour}"
   exit 0
 fi
