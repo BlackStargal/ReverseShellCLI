@@ -70,7 +70,7 @@ if [ "$option" == "1" ]; then
     if [ $(ls . | grep -oP "shells" | wc -l) -eq 0 ];then mkdir shells; fi
     cat $shellFile | grep "\"name\": \"$selectedShell\"" -A 1 | grep -oP "\"command\": \"\K.*" | sed 's/.\{2\}$//' | sed -e "s/{shell}/$typeOfShell/g" | sed -e "s/{ip}/$ip/g" | sed -e "s/{port}/$port/g" > shells/$fileName
     echo
-    cat shells/$fileName
+    echo -e $(cat shells/$fileName)
     echo -e "\nCreated file ${purpleColour}$fileName${endColour} in the shells directory\n"
     exit 0
   fi
